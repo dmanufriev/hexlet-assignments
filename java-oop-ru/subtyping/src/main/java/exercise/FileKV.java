@@ -34,8 +34,7 @@ public class FileKV implements KeyValueStorage {
 
     @Override
     public Map<String, String> toMap() {
-        Map<String, String> storage = Utils.unserialize(Utils.readFile(filePath));
-        return new HashMap<>(storage);
+        return Utils.unserialize(Utils.readFile(filePath));
     }
 }
 
