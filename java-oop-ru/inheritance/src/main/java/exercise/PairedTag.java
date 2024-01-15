@@ -17,13 +17,13 @@ public class PairedTag extends Tag {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(super.toString());
-        for (Tag tag : tags) {
-            builder.append(tag.toString());
-        }
-        builder.append(body);
-        builder.append("</").append(getName()).append(">");
-        return builder.toString();
+        String name = getName();
+        String attributesString = getAttributesString();
+        String tagsString = tags.stream()
+                                .map(Tag::toString)
+                                .collect(Collectors.joining(""));
+
+        return String.format("<%s%s>%s%s</%s>", name, attributesString, tagsString, body, name);
     }
 }
 
