@@ -21,7 +21,7 @@ public class Application {
 
     @GetMapping("/")
     String main() {
-        return "Main page";
+        return "Main page ";
     }
 }
 // END
