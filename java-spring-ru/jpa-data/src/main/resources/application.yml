@@ -1,0 +1,9 @@
+---
+
+# BEGIN
+spring:
+  jpa:
+    show-sql: true          # Показ SQL запросов
+    hibernate:
+      ddl-auto: update      # При старте приложения создается и обновляется схема базы данных
+# END
